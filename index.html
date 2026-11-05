@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Shinkiro is a private, personal productivity and financial ledger application.">
+    <title>Shinkiro - Private Personal Application</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --border-color: #334155;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #0ea5e9;
+            --badge-bg: #0369a1;
+            --badge-text: #e0f2fe;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2.5rem 1.25rem;
+        }
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+        .badge {
+            display: inline-block;
+            background-color: var(--badge-bg);
+            color: var(--badge-text);
+            padding: 0.35rem 0.9rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1.2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            font-size: 1.4rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1.25rem 0;
+        }
+        li {
+            padding: 0.5rem 0;
+            color: var(--text-muted);
+            display: flex;
+            align-items: flex-start;
+            font-size: 1rem;
+        }
+        li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.3rem;
+            display: inline-block;
+            width: 1.25em;
+            flex-shrink: 0;
+        }
+        .links-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin-top: 1.75rem;
+        }
+        @media (max-width: 640px) {
+            .links-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2rem; }
+        }
+        .nav-btn {
+            display: block;
+            text-align: center;
+            padding: 1.1rem 1.5rem;
+            background: #0284c7;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+        .nav-btn:hover {
+            background: #0369a1;
+            transform: translateY(-1px);
+        }
+        .nav-btn.secondary {
+            background: #334155;
+            color: #f8fafc;
+            border-color: #475569;
+        }
+        .nav-btn.secondary:hover {
+            background: #475569;
+        }
+        footer {
+            text-align: center;
+            margin-top: 3.5rem;
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="badge">Private Personal Application</span>
+            <h1>Shinkiro</h1>
+            <p class="subtitle">Personal Productivity, Finance Ledger & Secure Workspace</p>
+        </header>
+
+        <div class="card">
+            <h2>About Shinkiro</h2>
+            <p>
+                <strong>Shinkiro</strong> is a private, single-user productivity and personal treasury application designed solely for personal management of financial ledgers, budgeting records, encrypted notes, and local workspace tasks across personal desktop and mobile devices.
+            </p>
+            <p>
+                Shinkiro is <strong>not a commercial service, SaaS platform, or multi-tenant public application</strong>. It does not provide public registration, multi-user accounts, or third-party data collection. The software operates strictly in private, personal environments owned by its creator.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Google Drive API Integration</h2>
+            <p>
+                Shinkiro integrates with Google Drive API strictly to enable the owner to synchronize their own encrypted application backups and workspace files between authorized personal devices (desktop and mobile).
+            </p>
+            <ul>
+                <li><strong>Dedicated Backup Folder:</strong> The application operates strictly within a single user-selected backup folder inside the owner's personal Google Drive.</li>
+                <li><strong>Client-Side Encryption:</strong> All sensitive financial transactions, balance sheets, and notes are encrypted locally using AES-256 before transmission to Google Drive.</li>
+                <li><strong>Direct Cloud Handshake:</strong> All communications occur directly between the user's personal client device and Google's official Drive API endpoints. No intermediate servers or third parties ever access tokens, encryption keys, or data.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Legal & Compliance Disclosures</h2>
+            <p>
+                In compliance with the Google OAuth 2.0 Policies and the Google API Services User Data Policy, our formal privacy disclosures and terms of use are accessible below:
+            </p>
+            <div class="links-grid">
+                <a href="privacy-policy.html" class="nav-btn">Privacy Policy</a>
+                <a href="terms-of-service.html" class="nav-btn secondary">Terms of Service</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 Shinkiro. Private Personal Application. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
